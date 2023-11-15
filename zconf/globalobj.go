@@ -180,7 +180,7 @@ func (g *Config) InitLogConfig() {
 /*
 init, set default value
 */
-func init() {
+func Init() {
 	pwd, err := os.Getwd()
 	if err != nil {
 		pwd = "."
