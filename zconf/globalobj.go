@@ -125,7 +125,6 @@ func (g *Config) Reload() {
 		// (配置文件不存在也需要用默认参数初始化日志模块配置)
 		g.InitLogConfig()
 
-		zlog.Ins().ErrorF("Config File %s is not exist!! \n You can set configFile by setting the environment variable %s, like export %s = xxx/xxx/zinx.conf ", confFilePath, EnvConfigFilePathKey, EnvConfigFilePathKey)
 		return
 	}
 
@@ -180,7 +179,7 @@ func (g *Config) InitLogConfig() {
 /*
 init, set default value
 */
-func Init() {
+func init() {
 	pwd, err := os.Getwd()
 	if err != nil {
 		pwd = "."
